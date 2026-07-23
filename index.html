@@ -1,0 +1,393 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Guides et documentation de Hockey Québec.">
+  <meta name="theme-color" content="#071c33">
+  <title>Documentation | Hockey Québec</title>
+  <style>
+    :root {
+      --navy-950: #071c33;
+      --navy-900: #0c294a;
+      --blue-700: #1261a6;
+      --blue-100: #e9f3fb;
+      --ink: #172230;
+      --muted: #657286;
+      --line: #dce4ec;
+      --surface: #ffffff;
+      --background: #f4f7fa;
+      --shadow: 0 18px 45px rgba(7, 28, 51, 0.11);
+      --radius-lg: 22px;
+      --radius-md: 16px;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      margin: 0;
+      color: var(--ink);
+      background: var(--background);
+      font-family: Arial, Helvetica, sans-serif;
+      line-height: 1.6;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    a {
+      color: inherit;
+    }
+
+    .skip-link {
+      position: absolute;
+      top: -100px;
+      left: 16px;
+      z-index: 1000;
+      padding: 10px 14px;
+      color: var(--surface);
+      background: var(--navy-950);
+      border-radius: 8px;
+    }
+
+    .skip-link:focus {
+      top: 16px;
+    }
+
+    .topbar {
+      color: var(--surface);
+      background: var(--navy-950);
+      border-bottom: 1px solid rgba(255, 255, 255, 0.12);
+    }
+
+    .topbar__inner {
+      width: min(1120px, calc(100% - 40px));
+      min-height: 76px;
+      margin: 0 auto;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 24px;
+    }
+
+    .brand {
+      display: inline-flex;
+      align-items: center;
+      gap: 13px;
+      color: var(--surface);
+      text-decoration: none;
+    }
+
+    .brand__mark {
+      width: 44px;
+      height: 44px;
+      flex: 0 0 auto;
+      display: grid;
+      place-items: center;
+      color: var(--navy-950);
+      background: var(--surface);
+      border-radius: 12px;
+      font-size: 0.98rem;
+      font-weight: 800;
+      letter-spacing: -0.04em;
+    }
+
+    .brand__name,
+    .brand__label {
+      display: block;
+    }
+
+    .brand__name {
+      font-size: 1rem;
+      font-weight: 700;
+      line-height: 1.3;
+    }
+
+    .brand__label {
+      margin-top: 1px;
+      color: #c9d7e6;
+      font-size: 0.78rem;
+      line-height: 1.3;
+    }
+
+    .external-link {
+      color: var(--surface);
+      text-underline-offset: 4px;
+      font-size: 0.9rem;
+    }
+
+    .hero {
+      color: var(--surface);
+      background:
+        radial-gradient(circle at 12% 16%, rgba(255, 255, 255, 0.10), transparent 28%),
+        radial-gradient(circle at 88% 82%, rgba(52, 145, 224, 0.22), transparent 34%),
+        linear-gradient(135deg, var(--navy-950), var(--navy-900));
+      padding: 82px 20px 104px;
+    }
+
+    .hero__inner {
+      width: min(820px, 100%);
+      margin: 0 auto;
+      text-align: center;
+    }
+
+    .eyebrow {
+      display: inline-block;
+      margin-bottom: 18px;
+      padding: 7px 13px;
+      color: #e1edf8;
+      background: rgba(255, 255, 255, 0.10);
+      border: 1px solid rgba(255, 255, 255, 0.16);
+      border-radius: 999px;
+      font-size: 0.78rem;
+      font-weight: 700;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+    }
+
+    h1 {
+      margin: 0;
+      font-size: clamp(2.35rem, 7vw, 4.7rem);
+      line-height: 1.03;
+      letter-spacing: -0.045em;
+    }
+
+    .hero__lead {
+      max-width: 690px;
+      margin: 22px auto 0;
+      color: #d9e6f2;
+      font-size: clamp(1rem, 2.2vw, 1.16rem);
+    }
+
+    main {
+      width: min(1120px, calc(100% - 40px));
+      margin: -48px auto 74px;
+      position: relative;
+    }
+
+    .welcome {
+      padding: 30px;
+      background: var(--surface);
+      border: 1px solid var(--line);
+      border-radius: var(--radius-lg);
+      box-shadow: var(--shadow);
+    }
+
+    .welcome h2 {
+      margin: 0 0 8px;
+      color: var(--navy-950);
+      font-size: 1.42rem;
+      line-height: 1.25;
+    }
+
+    .welcome p {
+      max-width: 840px;
+      margin: 0;
+      color: var(--muted);
+    }
+
+    .section-heading {
+      margin: 42px 0 18px;
+    }
+
+    .section-heading h2 {
+      margin: 0 0 5px;
+      color: var(--navy-950);
+      font-size: clamp(1.55rem, 3vw, 2rem);
+      line-height: 1.2;
+      letter-spacing: -0.025em;
+    }
+
+    .section-heading p {
+      margin: 0;
+      color: var(--muted);
+    }
+
+    .guide-grid {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 20px;
+    }
+
+    .guide-card {
+      min-height: 232px;
+      padding: 24px;
+      display: flex;
+      flex-direction: column;
+      background: var(--surface);
+      border: 1px solid var(--line);
+      border-radius: var(--radius-md);
+      transition: transform 160ms ease, box-shadow 160ms ease, border-color 160ms ease;
+    }
+
+    .guide-card:hover {
+      transform: translateY(-3px);
+      border-color: #acc7df;
+      box-shadow: 0 14px 34px rgba(7, 28, 51, 0.09);
+    }
+
+    .guide-card__number {
+      width: 46px;
+      height: 46px;
+      margin-bottom: 18px;
+      display: grid;
+      place-items: center;
+      color: var(--blue-700);
+      background: var(--blue-100);
+      border-radius: 13px;
+      font-size: 0.84rem;
+      font-weight: 800;
+    }
+
+    .guide-card h3 {
+      margin: 0 0 8px;
+      color: var(--navy-950);
+      font-size: 1.16rem;
+      line-height: 1.3;
+    }
+
+    .guide-card p {
+      margin: 0 0 20px;
+      color: var(--muted);
+      font-size: 0.94rem;
+    }
+
+    .guide-card__status {
+      margin-top: auto;
+      color: var(--blue-700);
+      font-size: 0.86rem;
+      font-weight: 700;
+    }
+
+    .note {
+      margin-top: 28px;
+      padding: 20px 22px;
+      color: #405167;
+      background: #edf3f8;
+      border-left: 4px solid var(--blue-700);
+      border-radius: 0 12px 12px 0;
+      font-size: 0.92rem;
+    }
+
+    footer {
+      padding: 27px 20px;
+      color: var(--muted);
+      background: var(--surface);
+      border-top: 1px solid var(--line);
+      text-align: center;
+      font-size: 0.88rem;
+    }
+
+    @media (max-width: 820px) {
+      .guide-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+      }
+    }
+
+    @media (max-width: 600px) {
+      .topbar__inner {
+        min-height: auto;
+        padding: 16px 0;
+        align-items: flex-start;
+        flex-direction: column;
+        gap: 12px;
+      }
+
+      .hero {
+        padding-top: 58px;
+        padding-bottom: 88px;
+      }
+
+      main {
+        width: min(1120px, calc(100% - 28px));
+      }
+
+      .welcome {
+        padding: 24px;
+      }
+
+      .guide-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+  </style>
+</head>
+<body>
+  <a class="skip-link" href="#contenu">Aller au contenu principal</a>
+
+  <header class="topbar">
+    <div class="topbar__inner">
+      <a class="brand" href="./" aria-label="Accueil de la documentation Hockey Québec">
+        <span class="brand__mark" aria-hidden="true">HQ</span>
+        <span>
+          <span class="brand__name">Hockey Québec</span>
+          <span class="brand__label">Documentation officielle</span>
+        </span>
+      </a>
+
+      <a class="external-link" href="https://www.hockey.qc.ca" target="_blank" rel="noopener noreferrer">
+        Retour au site de Hockey Québec
+      </a>
+    </div>
+  </header>
+
+  <section class="hero" aria-labelledby="titre-page">
+    <div class="hero__inner">
+      <span class="eyebrow">Centre de ressources</span>
+      <h1 id="titre-page">Guides et documentation</h1>
+      <p class="hero__lead">
+        Consultez les guides, procédures et ressources de Hockey Québec dans un format clair, accessible et adapté à tous les appareils.
+      </p>
+    </div>
+  </section>
+
+  <main id="contenu">
+    <section class="welcome" aria-labelledby="titre-bienvenue">
+      <h2 id="titre-bienvenue">Bienvenue</h2>
+      <p>
+        Cette plateforme regroupera progressivement les documents de référence de Hockey Québec. Chaque guide conservera la même adresse Web lorsqu'une nouvelle version sera publiée.
+      </p>
+    </section>
+
+    <div class="section-heading">
+      <h2>Guides disponibles</h2>
+      <p>Les premiers documents seront ajoutés prochainement.</p>
+    </div>
+
+    <section class="guide-grid" aria-label="Catégories de documentation">
+      <article class="guide-card">
+        <span class="guide-card__number" aria-hidden="true">01</span>
+        <h3>Guides administratifs</h3>
+        <p>Procédures, programmes et documents de référence destinés aux organisations membres.</p>
+        <span class="guide-card__status">À venir</span>
+      </article>
+
+      <article class="guide-card">
+        <span class="guide-card__number" aria-hidden="true">02</span>
+        <h3>Formation et développement</h3>
+        <p>Ressources pour les entraîneurs, les officiels et les autres intervenants du hockey québécois.</p>
+        <span class="guide-card__status">À venir</span>
+      </article>
+
+      <article class="guide-card">
+        <span class="guide-card__number" aria-hidden="true">03</span>
+        <h3>Politiques et règlements</h3>
+        <p>Documents officiels et informations utiles concernant l'encadrement des activités.</p>
+        <span class="guide-card__status">À venir</span>
+      </article>
+    </section>
+
+    <aside class="note">
+      Les guides sont conçus pour être consultés directement dans un navigateur, sans téléchargement obligatoire.
+    </aside>
+  </main>
+
+  <footer>
+    © Hockey Québec — Tous droits réservés
+  </footer>
+</body>
+</html>
