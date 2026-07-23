@@ -3,13 +3,11 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="description" content="Guides, procédures et politiques officielles de Hockey Québec.">
+  <meta name="description" content="Documentation officielle de Hockey Québec.">
   <meta name="theme-color" content="#071c33">
   <link rel="icon" type="image/webp" href="assets/logo-hockey-quebec.webp">
   <link rel="stylesheet" href="assets/styles.css">
   <title>Documentation | Hockey Québec</title>
-  <script src="assets/documents.js" defer></script>
-  <script src="assets/app.js" defer></script>
 </head>
 <body>
   <a class="skip-link" href="#contenu">Aller au contenu principal</a>
@@ -17,13 +15,7 @@
   <header class="topbar">
     <div class="topbar__inner">
       <a class="brand" href="./" aria-label="Accueil de la documentation Hockey Québec">
-        <img
-          class="brand__logo"
-          src="assets/logo-hockey-quebec.webp"
-          alt=""
-          width="96"
-          height="96"
-        >
+        <img class="brand__logo" src="assets/logo-hockey-quebec.webp" alt="" width="96" height="96">
         <span>
           <span class="brand__name">Hockey Québec</span>
           <span class="brand__label">Documentation officielle</span>
@@ -32,52 +24,24 @@
 
       <a class="external-link" href="https://www.hockey.qc.ca" target="_blank" rel="noopener noreferrer">
         Retour au site de Hockey Québec
-        <span aria-hidden="true">↗</span>
       </a>
     </div>
   </header>
 
   <section class="hero" aria-labelledby="titre-page">
     <div class="hero__inner">
-      <p class="hero__eyebrow">Centre de documentation</p>
       <h1 id="titre-page">Documentation</h1>
-      <p class="hero__description">
-        Consultez les guides, procédures et politiques officielles de Hockey Québec.
-      </p>
     </div>
   </section>
 
   <main id="contenu">
-    <section class="catalogue" aria-labelledby="titre-catalogue">
-      <div class="catalogue__header">
-        <div>
-          <h2 id="titre-catalogue">Documents officiels</h2>
-          <p id="catalogue-count" class="catalogue__count" aria-live="polite">Chargement des documents…</p>
-        </div>
-
-        <div id="search-container" class="search" hidden>
-          <label class="search__label" for="document-search">Rechercher</label>
-          <div class="search__field">
-            <span class="search__icon" aria-hidden="true"></span>
-            <input
-              id="document-search"
-              class="search__input"
-              type="search"
-              inputmode="search"
-              autocomplete="off"
-              placeholder="Titre, sujet ou type de document"
-            >
-          </div>
-        </div>
-      </div>
-
-      <div id="documents" class="documents" aria-busy="true"></div>
-
-      <noscript>
-        <p class="notice">
-          JavaScript doit être activé pour afficher le catalogue des documents.
-        </p>
-      </noscript>
+    <section class="documents" aria-label="Documentation disponible">
+      <a class="document-card" href="mise-en-echec-2026-2027/">
+        <span class="document-card__type">Programme de formation</span>
+        <h2>Mise à jour du programme de formation de Mise en échec</h2>
+        <span class="document-card__edition">Saison 2026-2027</span>
+        <span class="document-card__action">Consulter le document <span aria-hidden="true">→</span></span>
+      </a>
     </section>
   </main>
 
